@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Show Details</title>
+    {% load static %}
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+
+</head>
+<body>
+<div class="container bg-light">
+<h2><center>Employee  Details...</center> </h2>
+<table border="1">
+    <thead class="thead-secondary">
+    <tr>
+        <th>Employee ID</th>
+         <th>Employee Name</th>
+         <th>Email Address</th>
+         <th>Action</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for emp in empls %}
+        <tr>
+        <td>{{ emp.empid }}</td>
+        <td>{{ emp.emp_name }}</td>
+        <td>{{ emp.emp_address }}</td>
+         <td>
+            <a href="/update/{{ emp.id }}">Edit </a><br>
+            <a href="/delete/{{ emp.id }}">Delete </a>
+         </td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+<br>
+
+
+
+</div>
+
+</body>
+</html>
